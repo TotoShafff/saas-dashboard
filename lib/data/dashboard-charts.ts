@@ -8,6 +8,13 @@ export type MonthlyOrders = {
   orders: number;
 };
 
+export type AnalyticsSummaryData = {
+  totalOrdersYear: number;
+  totalRevenueYear: number;
+  avgOrderValue: number;
+  conversionRate: number;
+};
+
 export const revenueOverviewData: MonthlyRevenue[] = [
   { month: "Jan", revenue: 68000 },
   { month: "Feb", revenue: 74500 },
@@ -22,6 +29,15 @@ export const revenueOverviewData: MonthlyRevenue[] = [
   { month: "Nov", revenue: 121200 },
   { month: "Dec", revenue: 124580 },
 ];
+
+// Computed from revenueOverviewData + orderActivityData
+// totalRevenue: $1,164,580 / totalOrders: 23,434 → avgOrderValue: ~$50
+export const analyticsSummary: AnalyticsSummaryData = {
+  totalOrdersYear: 23434,
+  totalRevenueYear: 1164580,
+  avgOrderValue: 50,
+  conversionRate: 3.8,
+};
 
 export const orderActivityData: MonthlyOrders[] = [
   { month: "Jan", orders: 1240 },

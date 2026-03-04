@@ -1,16 +1,21 @@
-import type { MonthlyRevenue, MonthlyOrders } from "@/lib/data/dashboard-charts";
+import type {
+  MonthlyRevenue,
+  MonthlyOrders,
+  AnalyticsSummaryData,
+} from "@/lib/data/dashboard-charts";
 import { getBaseUrl } from "./base-url";
 
-export type { MonthlyRevenue, MonthlyOrders };
+export type { MonthlyRevenue, MonthlyOrders, AnalyticsSummaryData };
 
 export type ChartData = {
   revenueOverview: MonthlyRevenue[];
   userActivity: MonthlyOrders[];
+  summary: AnalyticsSummaryData;
 };
 
 /**
- * Fetches both chart datasets in a single request.
- * When called from two concurrent Server Components, Next.js
+ * Fetches all chart data including the analytics summary in a single request.
+ * When called from multiple concurrent Server Components, Next.js
  * deduplicates the fetch — only one HTTP request is made.
  */
 export async function fetchChartData(): Promise<ChartData> {

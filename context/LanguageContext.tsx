@@ -32,15 +32,13 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const toggleLanguage = useCallback(() => {
-    setLanguage((prev) => {
-      const next: Language = prev === "en" ? "es" : "en";
-      // Persist to cookie so Server Components can read it
-      document.cookie = `lang=${next}; path=/; max-age=31536000; SameSite=Lax`;
-      // Re-render Server Components with the new language
-      router.refresh();
-      return next;
-    });
-  }, [router]);
+    // Compute next value outside setLanguage to avoid side-effects during render
+    const next: Language = language === "en" ? "es" : "en";
+    document.cookie = `lang=${next}; path=/; max-age=31536000; SameSite=Lax`;
+    setLanguage(next);
+    // Trigger Server Components re-render with the new language cookie
+    router.refresh();
+  }, [language, router]);
 
   const t = translations[language];
 

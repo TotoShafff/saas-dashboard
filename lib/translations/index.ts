@@ -57,6 +57,17 @@ export type TranslationKeys = {
     actions: Record<ActivityAction, string>;
     status: Record<ActivityStatus, string>;
   };
+  analytics: {
+    title: string;
+    subtitle: string;
+    summary: {
+      title: string;
+      subtitle: string;
+      totalOrders: string;
+      avgOrderValue: string;
+      conversionRate: string;
+    };
+  };
 };
 
 export const translations: Record<Language, TranslationKeys> = {
@@ -112,6 +123,17 @@ export const translations: Record<Language, TranslationKeys> = {
         failed: "Failed",
       },
     },
+    analytics: {
+      title: "Analytics",
+      subtitle: "Deep dive into your store performance for 2024.",
+      summary: {
+        title: "Year Summary",
+        subtitle: "Aggregated totals for the full year",
+        totalOrders: "Total Orders",
+        avgOrderValue: "Avg. Order Value",
+        conversionRate: "Conversion Rate",
+      },
+    },
   },
   es: {
     nav: {
@@ -163,6 +185,17 @@ export const translations: Record<Language, TranslationKeys> = {
         completed: "Completado",
         pending: "Pendiente",
         failed: "Fallido",
+      },
+    },
+    analytics: {
+      title: "Analíticas",
+      subtitle: "Análisis detallado del rendimiento de tu tienda en 2024.",
+      summary: {
+        title: "Resumen Anual",
+        subtitle: "Totales acumulados del año completo",
+        totalOrders: "Total de Pedidos",
+        avgOrderValue: "Valor Medio del Pedido",
+        conversionRate: "Tasa de Conversión",
       },
     },
   },
