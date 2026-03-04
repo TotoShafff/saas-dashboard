@@ -1,11 +1,11 @@
-import type { MonthlyRevenue, MonthlyUsers } from "@/lib/data/dashboard-charts";
+import type { MonthlyRevenue, MonthlyOrders } from "@/lib/data/dashboard-charts";
 import { getBaseUrl } from "./base-url";
 
-export type { MonthlyRevenue, MonthlyUsers };
+export type { MonthlyRevenue, MonthlyOrders };
 
 export type ChartData = {
   revenueOverview: MonthlyRevenue[];
-  userActivity: MonthlyUsers[];
+  userActivity: MonthlyOrders[];
 };
 
 /**

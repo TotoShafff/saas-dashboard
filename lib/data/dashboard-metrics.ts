@@ -1,8 +1,10 @@
+import type { MetricTitleKey } from "@/lib/translations";
+
 export type Trend = "up" | "down";
 
 export type Metric = {
   id: string;
-  title: string;
+  titleKey: MetricTitleKey;
   value: string;
   change: number;
   trend: Trend;
@@ -11,30 +13,30 @@ export type Metric = {
 export const dashboardMetrics: Metric[] = [
   {
     id: "total-revenue",
-    title: "Total Revenue",
-    value: "$84,254",
-    change: 12.5,
+    titleKey: "totalRevenue",
+    value: "$124,580",
+    change: 14.2,
     trend: "up",
   },
   {
-    id: "active-users",
-    title: "Active Users",
-    value: "3,842",
-    change: 8.1,
+    id: "total-customers",
+    titleKey: "totalCustomers",
+    value: "8,347",
+    change: 9.6,
     trend: "up",
   },
   {
-    id: "new-signups",
-    title: "New Signups",
-    value: "612",
-    change: -3.4,
-    trend: "down",
+    id: "monthly-orders",
+    titleKey: "monthlyOrders",
+    value: "2,614",
+    change: 5.3,
+    trend: "up",
   },
   {
-    id: "churn-rate",
-    title: "Churn Rate",
-    value: "2.4%",
-    change: -1.2,
+    id: "conversion-rate",
+    titleKey: "conversionRate",
+    value: "3.8%",
+    change: -0.4,
     trend: "down",
   },
 ];

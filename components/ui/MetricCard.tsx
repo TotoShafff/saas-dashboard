@@ -1,10 +1,17 @@
-import type { Metric } from "@/lib/data/dashboard-metrics";
-
-type Props = {
-  metric: Metric;
+export type MetricCardData = {
+  id: string;
+  title: string;
+  value: string;
+  change: number;
+  trend: "up" | "down";
 };
 
-export function MetricCard({ metric }: Props) {
+type Props = {
+  metric: MetricCardData;
+  comparisonLabel: string;
+};
+
+export function MetricCard({ metric, comparisonLabel }: Props) {
   const isPositive = metric.trend === "up";
   const changeAbs = Math.abs(metric.change);
 
@@ -21,11 +28,7 @@ export function MetricCard({ metric }: Props) {
               : "bg-red-50 text-red-700 dark:bg-red-950 dark:text-red-400"
           }`}
         >
-          {isPositive ? (
-            <ArrowUpIcon />
-          ) : (
-            <ArrowDownIcon />
-          )}
+          {isPositive ? <ArrowUpIcon /> : <ArrowDownIcon />}
           {changeAbs}%
         </span>
       </div>
@@ -33,7 +36,7 @@ export function MetricCard({ metric }: Props) {
         {metric.value}
       </p>
       <p className="mt-1 text-xs text-gray-400 dark:text-gray-600">
-        vs. last 30 days
+        {comparisonLabel}
       </p>
     </div>
   );
@@ -41,17 +44,7 @@ export function MetricCard({ metric }: Props) {
 
 function ArrowUpIcon() {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="12"
-      height="12"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
       <path d="m18 15-6-6-6 6" />
     </svg>
   );
@@ -59,17 +52,7 @@ function ArrowUpIcon() {
 
 function ArrowDownIcon() {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="12"
-      height="12"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
       <path d="m6 9 6 6 6-6" />
     </svg>
   );

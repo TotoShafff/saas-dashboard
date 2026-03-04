@@ -3,37 +3,37 @@ export type MonthlyRevenue = {
   revenue: number;
 };
 
-export type MonthlyUsers = {
+export type MonthlyOrders = {
   month: string;
-  users: number;
+  orders: number;
 };
 
 export const revenueOverviewData: MonthlyRevenue[] = [
-  { month: "Jan", revenue: 42000 },
-  { month: "Feb", revenue: 47500 },
-  { month: "Mar", revenue: 44200 },
-  { month: "Apr", revenue: 51000 },
-  { month: "May", revenue: 58300 },
-  { month: "Jun", revenue: 63100 },
-  { month: "Jul", revenue: 59800 },
-  { month: "Aug", revenue: 67400 },
-  { month: "Sep", revenue: 72000 },
-  { month: "Oct", revenue: 76500 },
-  { month: "Nov", revenue: 81200 },
-  { month: "Dec", revenue: 84254 },
+  { month: "Jan", revenue: 68000 },
+  { month: "Feb", revenue: 74500 },
+  { month: "Mar", revenue: 71200 },
+  { month: "Apr", revenue: 83000 },
+  { month: "May", revenue: 91300 },
+  { month: "Jun", revenue: 98100 },
+  { month: "Jul", revenue: 94800 },
+  { month: "Aug", revenue: 107400 },
+  { month: "Sep", revenue: 112000 },
+  { month: "Oct", revenue: 118500 },
+  { month: "Nov", revenue: 121200 },
+  { month: "Dec", revenue: 124580 },
 ];
 
-export const userActivityData: MonthlyUsers[] = [
-  { month: "Jan", users: 1840 },
-  { month: "Feb", users: 2120 },
-  { month: "Mar", users: 2380 },
-  { month: "Apr", users: 2150 },
-  { month: "May", users: 2690 },
-  { month: "Jun", users: 2950 },
-  { month: "Jul", users: 3120 },
-  { month: "Aug", users: 3340 },
-  { month: "Sep", users: 3580 },
-  { month: "Oct", users: 3410 },
-  { month: "Nov", users: 3720 },
-  { month: "Dec", users: 3842 },
+export const orderActivityData: MonthlyOrders[] = [
+  { month: "Jan", orders: 1240 },
+  { month: "Feb", orders: 1410 },
+  { month: "Mar", orders: 1380 },
+  { month: "Apr", orders: 1620 },
+  { month: "May", orders: 1850 },
+  { month: "Jun", orders: 2030 },
+  { month: "Jul", orders: 1970 },
+  { month: "Aug", orders: 2180 },
+  { month: "Sep", orders: 2340 },
+  { month: "Oct", orders: 2290 },
+  { month: "Nov", orders: 2510 },
+  { month: "Dec", orders: 2614 },
 ];
