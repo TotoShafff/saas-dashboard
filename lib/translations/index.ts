@@ -19,6 +19,7 @@ export type TranslationKeys = {
   nav: {
     dashboard: string;
     analytics: string;
+    orders: string;
     reports: string;
     settings: string;
   };
@@ -68,6 +69,40 @@ export type TranslationKeys = {
       conversionRate: string;
     };
   };
+  orders: {
+    title: string;
+    subtitle: string;
+    empty: string;
+    columns: {
+      id: string;
+      customer: string;
+      date: string;
+      total: string;
+      status: string;
+    };
+    status: {
+      pending: string;
+      shipped: string;
+      cancelled: string;
+      refunded: string;
+    };
+    pagination: {
+      previous: string;
+      next: string;
+      pageOf: string;
+    };
+    controls: {
+      searchPlaceholder: string;
+      allStatuses: string;
+      search: string;
+      sort: {
+        dateDesc: string;
+        dateAsc: string;
+        totalDesc: string;
+        totalAsc: string;
+      };
+    };
+  };
 };
 
 export const translations: Record<Language, TranslationKeys> = {
@@ -75,6 +110,7 @@ export const translations: Record<Language, TranslationKeys> = {
     nav: {
       dashboard: "Dashboard",
       analytics: "Analytics",
+      orders: "Orders",
       reports: "Reports",
       settings: "Settings",
     },
@@ -134,11 +170,46 @@ export const translations: Record<Language, TranslationKeys> = {
         conversionRate: "Conversion Rate",
       },
     },
+    orders: {
+      title: "Orders",
+      subtitle: "Browse and manage all customer orders.",
+      empty: "No orders found.",
+      columns: {
+        id: "Order ID",
+        customer: "Customer",
+        date: "Date",
+        total: "Total",
+        status: "Status",
+      },
+      status: {
+        pending: "Pending",
+        shipped: "Shipped",
+        cancelled: "Cancelled",
+        refunded: "Refunded",
+      },
+      pagination: {
+        previous: "Previous",
+        next: "Next",
+        pageOf: "of",
+      },
+      controls: {
+        searchPlaceholder: "Search by name or order ID…",
+        allStatuses: "All statuses",
+        search: "Search",
+        sort: {
+          dateDesc: "Date: Newest first",
+          dateAsc: "Date: Oldest first",
+          totalDesc: "Total: High to low",
+          totalAsc: "Total: Low to high",
+        },
+      },
+    },
   },
   es: {
     nav: {
       dashboard: "Panel",
       analytics: "Analíticas",
+      orders: "Pedidos",
       reports: "Informes",
       settings: "Configuración",
     },
@@ -196,6 +267,40 @@ export const translations: Record<Language, TranslationKeys> = {
         totalOrders: "Total de Pedidos",
         avgOrderValue: "Valor Medio del Pedido",
         conversionRate: "Tasa de Conversión",
+      },
+    },
+    orders: {
+      title: "Pedidos",
+      subtitle: "Consulta y gestiona todos los pedidos de clientes.",
+      empty: "No se encontraron pedidos.",
+      columns: {
+        id: "N° Pedido",
+        customer: "Cliente",
+        date: "Fecha",
+        total: "Total",
+        status: "Estado",
+      },
+      status: {
+        pending: "Pendiente",
+        shipped: "Enviado",
+        cancelled: "Cancelado",
+        refunded: "Reembolsado",
+      },
+      pagination: {
+        previous: "Anterior",
+        next: "Siguiente",
+        pageOf: "de",
+      },
+      controls: {
+        searchPlaceholder: "Buscar por nombre o N° pedido…",
+        allStatuses: "Todos los estados",
+        search: "Buscar",
+        sort: {
+          dateDesc: "Fecha: Más reciente",
+          dateAsc: "Fecha: Más antiguo",
+          totalDesc: "Total: Mayor a menor",
+          totalAsc: "Total: Menor a mayor",
+        },
       },
     },
   },
